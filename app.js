@@ -5,7 +5,7 @@
 
 var express = require('express')
   , routes = require('./routes')
-  , routes2 = require('./routes/index2')
+  , routes2 = require('./routes/index3')
 
 var app = module.exports = express.createServer();
 
@@ -36,5 +36,5 @@ app.configure('production', function(){
 app.get('/', routes.index);
 app.get('/index2', routes2.index2);
 
-app.listen(3000);
+app.listen(process.env.C9_PORT);
 console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
